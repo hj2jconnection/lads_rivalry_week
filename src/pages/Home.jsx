@@ -185,11 +185,11 @@ export default function HomePage() {
       <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
         {/* Logo */}
         <div className="mb-8">
-        <div className="w-20 h-20 bg-black border-2 border-white rounded-2xl flex items-center justify-center mb-4 mx-auto">
-          <span className="text-white text-3xl font-bold">🍔</span>
+        <div className="w-20 h-20 bg-black border-2 border-white rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-2xl">
+          <div className="text-4xl">🍔</div>
         </div>
           <h1 className="text-6xl font-bold text-white text-center mb-2">
-            Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
+            Get Muck<span className="text-4xl">'</span><span className="text-5xl">d</span>
           </h1>
           <p className="text-white text-xl text-center">
             Too many mothermuckers, mucking with my shit
@@ -217,11 +217,11 @@ export default function HomePage() {
     <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
       {/* Logo */}
       <div className="mb-8">
-        <div className="w-20 h-20 bg-black border-2 border-white rounded-2xl flex items-center justify-center mb-4 mx-auto">
-          <span className="text-white text-3xl font-bold">🍔</span>
+        <div className="w-20 h-20 bg-black border-2 border-white rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-2xl">
+          <div className="text-4xl">🍔</div>
         </div>
         <h1 className="text-6xl font-bold text-white text-center mb-2">
-          Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
+          Get Muck<span className="text-4xl">'</span><span className="text-5xl">d</span>
         </h1>
         <p className="text-white text-xl text-center">
           Too many mothermuckers, mucking with my shit
