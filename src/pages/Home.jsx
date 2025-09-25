@@ -322,7 +322,7 @@ export default function HomePage() {
                       <span className="font-bold text-blue-400">{rivalry.team_a_name}</span>
                       <span className="font-bold text-red-400">{rivalry.team_b_name}</span>
                   </div>
-                  <div className="w-full max-w-2xl mx-auto">
+                  <div className="w-full">
                     <Slider
                       value={marginValue}
                       onValueChange={setMarginValue}
