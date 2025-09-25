@@ -284,6 +284,7 @@ export default function HomePage() {
             </div>
           </div>
         </Card>
+      </div>
 
       {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
 
