@@ -10,14 +10,14 @@ export default function Dashboard() {
     <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
       {/* Logo */}
       <div className="mb-8">
-        <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+        <div className="w-20 h-20 bg-black border-2 border-white rounded-2xl flex items-center justify-center mb-4 mx-auto">
           <span className="text-white text-3xl font-bold">🍔</span>
         </div>
         <h1 className="text-6xl font-bold text-white text-center mb-2">
           Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
         </h1>
-        <p className="text-purple-400 text-xl text-center">
-          Turning Playtime into Paytime
+        <p className="text-white text-xl text-center">
+          Too many mothermuckers, mucking with my shit
         </p>
       </div>
 
@@ -28,7 +28,6 @@ export default function Dashboard() {
             size="lg" 
             className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-lg font-semibold rounded-xl flex items-center gap-3"
           >
-            <span className="text-2xl">🎯</span>
             Pick your Mucker
             <ArrowRight className="w-5 h-5" />
           </Button>

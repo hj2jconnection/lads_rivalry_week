@@ -185,20 +185,19 @@ export default function HomePage() {
       <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
         {/* Logo */}
         <div className="mb-8">
-          <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-            <span className="text-white text-3xl font-bold">🍔</span>
-          </div>
+        <div className="w-20 h-20 bg-black border-2 border-white rounded-2xl flex items-center justify-center mb-4 mx-auto">
+          <span className="text-white text-3xl font-bold">🍔</span>
+        </div>
           <h1 className="text-6xl font-bold text-white text-center mb-2">
             Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
           </h1>
-          <p className="text-purple-400 text-xl text-center">
-            Turning Playtime into Paytime
+          <p className="text-white text-xl text-center">
+            Too many mothermuckers, mucking with my shit
           </p>
         </div>
 
         {/* No Rivalry Message */}
         <div className="text-center mb-8">
-          <Trophy className="w-12 h-12 mx-auto text-slate-500 mb-4" />
           <h2 className="text-2xl font-bold text-white mb-2">No Rivalry Week Active</h2>
           <p className="text-slate-400">The commissioner hasn't set up the next rivalry matchup yet.</p>
         </div>
@@ -218,14 +217,14 @@ export default function HomePage() {
     <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
       {/* Logo */}
       <div className="mb-8">
-        <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+        <div className="w-20 h-20 bg-black border-2 border-white rounded-2xl flex items-center justify-center mb-4 mx-auto">
           <span className="text-white text-3xl font-bold">🍔</span>
         </div>
         <h1 className="text-6xl font-bold text-white text-center mb-2">
           Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
         </h1>
-        <p className="text-purple-400 text-xl text-center">
-          Turning Playtime into Paytime
+        <p className="text-white text-xl text-center">
+          Too many mothermuckers, mucking with my shit
         </p>
       </div>
 
@@ -242,7 +241,6 @@ export default function HomePage() {
             }
           }}
         >
-          <span className="text-2xl">🎯</span>
           Pick your Mucker
           <ArrowRight className="w-5 h-5" />
         </Button>
