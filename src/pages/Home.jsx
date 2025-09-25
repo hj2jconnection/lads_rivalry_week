@@ -182,10 +182,27 @@ export default function HomePage() {
 
   if (!rivalry) {
     return (
-      <div className="text-center py-20">
-        <Trophy className="w-12 h-12 mx-auto text-slate-500 mb-4" />
-        <h2 className="text-2xl font-bold text-white">No Rivalry Week Active</h2>
-        <p className="text-slate-400">The commissioner hasn't set up the next rivalry matchup yet.</p>
+      <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
+        {/* Logo */}
+        <div className="mb-8">
+          <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+            <span className="text-white text-3xl font-bold">🍔</span>
+          </div>
+          <h1 className="text-6xl font-bold text-white text-center mb-2">
+            Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
+          </h1>
+          <p className="text-purple-400 text-xl text-center">
+            Turning Playtime into Paytime
+          </p>
+        </div>
+
+        {/* No Rivalry Message */}
+        <div className="text-center mb-8">
+          <Trophy className="w-12 h-12 mx-auto text-slate-500 mb-4" />
+          <h2 className="text-2xl font-bold text-white mb-2">No Rivalry Week Active</h2>
+          <p className="text-slate-400">The commissioner hasn't set up the next rivalry matchup yet.</p>
+        </div>
+
         {isAdmin && <AdminPanel fetchData={fetchData} />}
       </div>
     );
@@ -198,41 +215,75 @@ export default function HomePage() {
   };
 
   return (
-    <div className="space-y-8">
-      {rivalry.rivalry_name && (
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-yellow-400 mb-2">{rivalry.rivalry_name}</h1>
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
+      {/* Logo */}
+      <div className="mb-8">
+        <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+          <span className="text-white text-3xl font-bold">🍔</span>
         </div>
-      )}
+        <h1 className="text-6xl font-bold text-white text-center mb-2">
+          Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
+        </h1>
+        <p className="text-purple-400 text-xl text-center">
+          Turning Playtime into Paytime
+        </p>
+      </div>
 
-      <Card className="bg-slate-800 border-slate-700 text-white overflow-hidden relative">
-        {bettingClosed && (
-            <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center z-10">
-                <Lock className="w-12 h-12 text-yellow-400" />
-                <h3 className="text-2xl font-bold mt-2">Betting Closed</h3>
-                <p>Results are in for Week {rivalry.week_number}</p>
-            </div>
+      {/* Main Button */}
+      <div className="mb-8">
+        <Button 
+          size="lg" 
+          className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-lg font-semibold rounded-xl flex items-center gap-3"
+          onClick={() => {
+            // Scroll to betting section or show betting interface
+            const bettingSection = document.getElementById('betting-section');
+            if (bettingSection) {
+              bettingSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          <span className="text-2xl">🎯</span>
+          Pick your Mucker
+          <ArrowRight className="w-5 h-5" />
+        </Button>
+      </div>
+
+      {/* Betting Section */}
+      <div id="betting-section" className="w-full max-w-4xl space-y-8">
+        {rivalry.rivalry_name && (
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-yellow-400 mb-2">{rivalry.rivalry_name}</h2>
+          </div>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center p-6 md:p-8">
-          <div className="flex flex-col items-center text-center md:items-start md:text-left">
-            <img src={rivalry.team_a_logo_url || "https://placehold.co/80"} alt={rivalry.team_a_name} className="w-20 h-20 rounded-full bg-slate-700 mb-2"/>
-            <h2 className="text-2xl font-bold">{rivalry.team_a_name}</h2>
-            <p className="text-slate-400">{rivalry.team_a_owner}</p>
-            <p className="font-mono text-yellow-400">{rivalry.team_a_record}</p>
+
+        <Card className="bg-slate-800 border-slate-700 text-white overflow-hidden relative">
+          {bettingClosed && (
+              <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center z-10">
+                  <Lock className="w-12 h-12 text-yellow-400" />
+                  <h3 className="text-2xl font-bold mt-2">Betting Closed</h3>
+                  <p>Results are in for Week {rivalry.week_number}</p>
+              </div>
+          )}
+          <div className="grid grid-cols-1 md:grid-cols-3 items-center p-6 md:p-8">
+            <div className="flex flex-col items-center text-center md:items-start md:text-left">
+              <img src={rivalry.team_a_logo_url || "https://placehold.co/80"} alt={rivalry.team_a_name} className="w-20 h-20 rounded-full bg-slate-700 mb-2"/>
+              <h2 className="text-2xl font-bold">{rivalry.team_a_name}</h2>
+              <p className="text-slate-400">{rivalry.team_a_owner}</p>
+              <p className="font-mono text-yellow-400">{rivalry.team_a_record}</p>
+            </div>
+            <div className="text-center py-4 md:py-0">
+              <p className="text-white text-sm">Week {rivalry.week_number}</p>
+              <h3 className="text-4xl font-black text-yellow-400 my-1">VS</h3>
+              <p className="text-slate-300 text-sm italic">For a $40 DoorDash Muck</p>
+            </div>
+            <div className="flex flex-col items-center text-center md:items-end md:text-right">
+              <img src={rivalry.team_b_logo_url || "https://placehold.co/80"} alt={rivalry.team_b_name} className="w-20 h-20 rounded-full bg-slate-700 mb-2"/>
+              <h2 className="text-2xl font-bold">{rivalry.team_b_name}</h2>
+              <p className="text-slate-400">{rivalry.team_b_owner}</p>
+              <p className="font-mono text-yellow-400">{rivalry.team_b_record}</p>
+            </div>
           </div>
-          <div className="text-center py-4 md:py-0">
-            <p className="text-white text-sm">Week {rivalry.week_number}</p>
-            <h3 className="text-4xl font-black text-yellow-400 my-1">VS</h3>
-            <p className="text-slate-300 text-sm italic">For a $40 DoorDash Muck</p>
-          </div>
-          <div className="flex flex-col items-center text-center md:items-end md:text-right">
-            <img src={rivalry.team_b_logo_url || "https://placehold.co/80"} alt={rivalry.team_b_name} className="w-20 h-20 rounded-full bg-slate-700 mb-2"/>
-            <h2 className="text-2xl font-bold">{rivalry.team_b_name}</h2>
-            <p className="text-slate-400">{rivalry.team_b_owner}</p>
-            <p className="font-mono text-yellow-400">{rivalry.team_b_record}</p>
-          </div>
-        </div>
-      </Card>
+        </Card>
 
       {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
 

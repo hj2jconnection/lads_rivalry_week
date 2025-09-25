@@ -7,22 +7,33 @@ import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {
   return (
-    <div className="text-center py-20">
-      <Card className="bg-slate-800 border-slate-700 text-white max-w-md mx-auto">
-        <CardContent className="p-8">
-          <Trophy className="w-16 h-16 mx-auto text-yellow-400 mb-4" />
-          <h2 className="text-2xl font-bold mb-4">Welcome to Fantasy Rivalry Bets</h2>
-          <p className="text-slate-400 mb-6">
-            Place your bets on the weekly rivalry matchup and compete for prizes.
-          </p>
-          <Link to={createPageUrl("Home")}>
-            <Button className="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold">
-              Go to Current Rivalry
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
-        </CardContent>
-      </Card>
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
+      {/* Logo */}
+      <div className="mb-8">
+        <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+          <span className="text-white text-3xl font-bold">🍔</span>
+        </div>
+        <h1 className="text-6xl font-bold text-white text-center mb-2">
+          Muck <span className="text-4xl">'</span><span className="text-5xl">d</span>
+        </h1>
+        <p className="text-purple-400 text-xl text-center">
+          Turning Playtime into Paytime
+        </p>
+      </div>
+
+      {/* Main Button */}
+      <div className="mb-8">
+        <Link to={createPageUrl("Home")}>
+          <Button 
+            size="lg" 
+            className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-lg font-semibold rounded-xl flex items-center gap-3"
+          >
+            <span className="text-2xl">🎯</span>
+            Pick your Mucker
+            <ArrowRight className="w-5 h-5" />
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
