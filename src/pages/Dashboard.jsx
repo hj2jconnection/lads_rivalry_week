@@ -17,7 +17,7 @@ export default function Dashboard() {
           Get Muck<span className="text-4xl">'</span><span className="text-5xl">d</span>
         </h1>
         <p className="text-white text-xl text-center">
-          Too many mothermuckers, mucking with my shit
+          Too many mothermuckers mucking with my shit
         </p>
       </div>
 

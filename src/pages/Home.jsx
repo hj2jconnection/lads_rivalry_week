@@ -192,7 +192,7 @@ export default function HomePage() {
             Get Muck<span className="text-4xl">'</span><span className="text-5xl">d</span>
           </h1>
           <p className="text-white text-xl text-center">
-            Too many mothermuckers, mucking with my shit
+            Too many mothermuckers mucking with my shit
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export default function HomePage() {
           Get Muck<span className="text-4xl">'</span><span className="text-5xl">d</span>
         </h1>
         <p className="text-white text-xl text-center">
-          Too many mothermuckers, mucking with my shit
+          Too many mothermuckers mucking with my shit
         </p>
       </div>
 
@@ -317,19 +317,29 @@ export default function HomePage() {
               <div className="text-center mb-4">
                 <p className="text-slate-300">Betting as: <strong className="text-yellow-400">{userName}</strong></p>
               </div>
-              <div className="px-1">
-                  <div className="flex justify-between items-center mb-2 text-sm">
+              <div className="px-4 py-6">
+                  <div className="flex justify-between items-center mb-4 text-sm">
                       <span className="font-bold text-blue-400">{rivalry.team_a_name}</span>
                       <span className="font-bold text-red-400">{rivalry.team_b_name}</span>
                   </div>
-                  <Slider
-                    value={marginValue}
-                    onValueChange={setMarginValue}
-                    max={30}
-                    min={-30}
-                    step={1}
-                  />
-                  <div className="text-center text-yellow-400 font-bold text-lg mt-4 h-7">
+                  <div className="w-full max-w-2xl mx-auto">
+                    <Slider
+                      value={marginValue}
+                      onValueChange={setMarginValue}
+                      max={100}
+                      min={-100}
+                      step={1}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-xs text-slate-400 mt-2">
+                      <span>-100</span>
+                      <span>-50</span>
+                      <span>0</span>
+                      <span>+50</span>
+                      <span>+100</span>
+                    </div>
+                  </div>
+                  <div className="text-center text-yellow-400 font-bold text-lg mt-6 h-7">
                       <MarginSliderLabel />
                   </div>
               </div>
@@ -358,7 +368,7 @@ export default function HomePage() {
                   
                   {bets.map(bet => {
                     const betValue = parseInt(bet.pick, 10);
-                    const position = ((betValue + 30) / 60) * 100;
+                    const position = ((betValue + 100) / 200) * 100;
                     const isCurrentUser = bet.user_name === userName;
                     const initials = getInitials(bet.user_name);
                     
@@ -386,11 +396,11 @@ export default function HomePage() {
                 </div>
                 
                 <div className="flex justify-between text-xs text-slate-400 px-1 mt-1">
-                  <span>-30</span>
-                  <span>-15</span>
+                  <span>-100</span>
+                  <span>-50</span>
                   <span>0</span>
-                  <span>+15</span>
-                  <span>+30</span>
+                  <span>+50</span>
+                  <span>+100</span>
                 </div>
               </div>
               
