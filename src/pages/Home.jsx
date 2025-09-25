@@ -92,6 +92,7 @@ export default function HomePage() {
         }
       } catch (e) {
         // This is expected for non-logged-in users, so we can ignore it.
+        console.log("No authenticated user, admin features disabled");
         setIsAdmin(false);
       }
 
