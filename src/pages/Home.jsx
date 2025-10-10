@@ -355,14 +355,14 @@ export default function HomePage() {
            )}
            
           {(userName && (currentUserBets.length > 0 || bettingClosed)) && (
-            <div className="bg-slate-900 p-6 rounded-lg mt-6">
+            <div className="bg-slate-900 p-6 rounded-lg mt-6 -mx-6">
               <h4 className="font-bold mb-4 text-center">Betting Line Visualization</h4>
-              <div className="relative">
+              <div className="relative px-6">
                 <div className="flex justify-between text-sm mb-2">
                   <span className="text-blue-400 font-bold">{rivalry.team_a_name}</span>
                   <span className="text-red-400 font-bold">{rivalry.team_b_name}</span>
                 </div>
-                
+
                 <div className="relative h-14 bg-slate-700 rounded-full">
                   <div className="absolute top-1/2 left-1/2 w-0.5 h-6 bg-white transform -translate-x-1/2 -translate-y-1/2"></div>
                   
