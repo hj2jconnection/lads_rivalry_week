@@ -282,11 +282,10 @@ export default function HomePage() {
             </div>
           </div>
         </Card>
-      </div>
 
-      {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
+        {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
 
-      <Card className="bg-slate-800 border-slate-700 text-white">
+        <Card className="bg-slate-800 border-slate-700 text-white">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Target className="text-yellow-400" />
@@ -447,9 +446,10 @@ export default function HomePage() {
             </div>
           )}
         </CardContent>
-      </Card>
+        </Card>
 
-      {isAdmin && <AdminPanel rivalry={rivalry} bets={bets} fetchData={fetchData} />}
+        {isAdmin && <AdminPanel rivalry={rivalry} bets={bets} fetchData={fetchData} />}
+      </div>
     </div>
   );
 }
